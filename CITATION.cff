@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software in research, please cite it using the metadata from this file."
+title: "ESCC Neoadjuvant Epithelial–Myeloid–CAF Analysis"
+type: software
+version: 0.1.0-prepublication
+authors:
+  - name: "Xiaowei Xie"
+    orcid: "https://orcid.org/0009-0009-4221-2777"
+  - name: "Ying Guo"
+    orcid: "https://orcid.org/0009-0002-3907-0455"
+  - name: "Lanmei Yu"
+keywords:
+  - "esophageal squamous cell carcinoma"
+  - "single-cell RNA sequencing"
+  - "cancer-associated fibroblasts"
+  - "neoadjuvant therapy"
+  - "cross-cohort analysis"
+license: MIT
+# repository-code: TODO — GitHub repository URL to be added after the repository is created
+# doi: TODO — archive DOI to be added after publication
+# date-released: TODO — to be set at first public release
