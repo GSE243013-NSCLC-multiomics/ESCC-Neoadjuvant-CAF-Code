@@ -51,7 +51,7 @@ they contain the largest number of supporting, pilot, and QA scripts.
 | 19 | Frozen cross-dataset analytical core: pseudobulk inventory (19A), DGE/QC (19B), GSE197677 DE and sensitivity (19C), replication and orientation correction (19D), hallmark/pathway robustness (19E/19F), epithelial localization/mixed-program audits (19G–19I), CORE definitions and direction correction (19J), fibroblast core/abundance/heterogeneity/regulator audits (19K–19N), targeted ligand-receptor signaling audits and reconciliation (19O–19P), and final signaling synthesis (19Q). |
 | 20 | Global project status, step status, evidence hierarchy, and optional-branch tracking. |
 | 21 | Frozen result-report/manuscript/figure/table/export assembly (incl. DOCX/PDF consistency tooling). |
-| 22A | External validation: frozen score source, 27-sample tumor QC, histology gate, technical CORE2/CORE4 replication audits, and final governance/conclusion. |
+| 22A | OMIX005710 paired sensitivity analysis: frozen score source, technical eligibility, histology-sensitivity settings, CORE2/CORE4 direction and influence audits, and final governance/conclusion. |
 | 23 | Manuscript integration, evidence-map freeze, QA edits, verified source-reference insertion, and human-review gates. |
 
 ### Stage 17–23 detail (why so many scripts)
@@ -64,8 +64,8 @@ they contain the largest number of supporting, pilot, and QA scripts.
   are correction/reconciliation variants of earlier sub-steps.
 - **Stage 21** mixes final-assembly scripts with revision variants
   (`21D_REV1*`, `21D_REV2*`) and the DOCX/PDF export/consistency utilities.
-- **Stage 22A** contains both the external-validation analyses and the
-  freeze/verification/histology-gate scripts that lock the scoring source.
+- **Stage 22A** contains the OMIX005710 paired sensitivity analyses and the
+  freeze/verification/histology-gate scripts that lock the scoring source. Historical filenames may retain “validation” terminology; this is workflow provenance and does not upgrade the manuscript claim to confirmatory external validation.
 - **Stage 23** is almost entirely manuscript-integration and QA tooling
   (context maps, safe-locked edits, review packets, human-decision freezes);
   these are publication utilities, not new analyses.
@@ -113,5 +113,15 @@ proximity alone.
 
 - [README.md](README.md) — overview, environment, and reproduction scope
 - [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md) — public data sources and exclusions
-- [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md) — code-release status and placeholders
+- [CODE_AVAILABILITY.md](CODE_AVAILABILITY.md) — public GitHub and Zenodo archive information
 - [RESOURCE_PROVENANCE.md](RESOURCE_PROVENANCE.md) — external resource provenance and to-be-verified items
+
+
+## Final-manuscript interpretation note
+
+The stage map preserves historical workflow names. For the final Cancers manuscript:
+
+- GSE197677 and GSE221561 are treated as cross-sectional discovery cohorts;
+- OMIX005710 is treated as an independent paired sensitivity analysis;
+- the 22 OMIX005710 histology-sensitivity settings reuse the same four to five paired patients and are not independent replications;
+- historical filenames containing `VALIDATION`, `REPLICATION`, `FINAL`, or `LOCK` should not be interpreted as stronger clinical-validation claims than those stated in the manuscript.

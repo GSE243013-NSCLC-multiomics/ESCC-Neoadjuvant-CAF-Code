@@ -1,15 +1,15 @@
 # Resource Provenance
 
-> Template for the ligand–receptor (LR) resource audit and, more broadly, for
-> every external resource referenced by the analysis pipeline.
+> Evidence-based provenance record for the ligand–receptor (LR) audit and other
+> external resources referenced by the historical analysis pipeline.
 >
-> Rule: **no value is filled from memory.** Only values that are verifiable in
-> this repository (scripts, tables, metadata, lockfile) are entered; everything
-> else is `TO BE VERIFIED BEFORE PUBLIC RELEASE`.
+> Rule: values are recorded only when supported by the repository or by the
+> verified accession/publication records documented below. Historical gaps are
+> retained explicitly rather than filled from memory.
 
-Legend: **Verified in repo** = value is directly traceable to a committed file
-in this repository. **TO BE VERIFIED** = value must be confirmed against the
-original resource before public release.
+Legend: **Verified in repo** = directly traceable to the released repository.
+**Historical provenance not recoverable** = the released record does not support
+a stronger attribution; this is an evidence boundary, not a prompt to invent one.
 
 ---
 
@@ -107,35 +107,35 @@ original resource before public release.
 
 | Field | Value |
 |-------|-------|
-| **Resource** | renv lockfile + R runtime |
-| **Purpose** | Anonymous/safe reproduction of the analysis environment |
-| **Exact object/file name** | `renv.lock`, `renv/activate.R`, `renv/settings.json`, `.Rprofile` |
+| **Resource** | `renv.lock` + R runtime |
+| **Purpose** | Reproducibility of the released R analysis environment |
+| **Exact object/file name** | `renv.lock`, `renv/activate.R`, `renv/settings.json` |
 | **Package/database** | renv; R; Bioconductor |
-| **Version** | R `4.6.1`; Bioconductor `3.23`; renv `1.2.4`; BiocManager `1.30.27` (all verified in `renv.lock`) |
-| **Freeze/retrieval date** | TO BE VERIFIED BEFORE PUBLIC RELEASE (recorded per-analysis in `08_logs/*_sessionInfo.txt`) |
-| **Source URL** | CRAN repo `https://cloud.r-project.org` (in `renv.lock`) |
-| **DOI** | None |
-| **Checksum** | TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Used by script(s)** | All R scripts (environment bootstrap) |
-| **Verification status** | Verified in repo (lockfile content); full package-level pinning beyond bootstrap = TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Notes** | Starting point: regeneration should run `renv::restore()` plus mandated package installs; analysis packages (e.g., edgeR, Seurat, fgsea, msigdbr) must be pinned by a full snapshot before release. |
+| **Version** | R `4.6.1`; Bioconductor `3.23`; renv `1.2.4`; BiocManager `1.30.27` |
+| **Package-level snapshot** | `192` package records in the reviewed lockfile, including Seurat `5.5.1`, edgeR `4.10.1`, fgsea `1.38.0`, msigdbr `26.1.0`, and data.table `1.18.4` |
+| **Source URL** | CRAN `https://cloud.r-project.org`; Bioconductor entries identify Bioconductor 3.23 |
+| **SHA-256** | `b52009f6d6efadadfa75659189974153f0dbdf90cb3995c13e1765abd9ad8275` |
+| **Used by script(s)** | R workflow scripts via the project environment |
+| **Verification status** | **Verified in the released lockfile.** The previous “bootstrap-only / full snapshot pending” wording was stale and is superseded by the current 192-package lockfile. |
+| **Notes** | `renv::restore()` is the intended environment-restoration mechanism, subject to platform compatibility and continued availability of recorded package sources. |
 
 ### 6. Public datasets (provenance pointer)
 
-| Field | Value |
-|-------|-------|
-| **Resource** | GSE221561, GSE197677, GSE160269, TCGA-ESCA, GSE53625, DepMap |
-| **Purpose** | Input data / validation context / optional branches (see README) |
-| **Exact object/file name** | Download targets/manifests in `00_metadata/` (`*_download_targets.tsv`, `_supplementary_files.csv`, etc.) |
-| **Package/database** | Original dataset repositories (unchanged terms) |
-| **Version** | Accession-level only; exact archived versions TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Freeze/retrieval date** | TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Source URL** | TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **DOI** | TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Checksum** | TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Used by script(s)** | Per-dataset pipeline scripts (Steps 01–22A; see `README.md` workflow table) |
-| **Verification status** | Accessions verified in repo metadata; URLs/DOIs/dates/checksums TO BE VERIFIED BEFORE PUBLIC RELEASE |
-| **Notes** | Raw data are not redistributed; see `DATA_AVAILABILITY.md`. TCGA-ESCA / GSE53625 / DepMap are referenced in Step 20/22A planning/audit records (`STEP20_OPTIONAL_NEXT_BRANCHES.csv`, `STEP22A_04_KEYWORD_HITS.csv`). |
+#### Principal datasets in the final Cancers manuscript
+
+| Dataset | Repository / URL | Verified primary publication | Final manuscript role |
+|---|---|---|---|
+| **GSE197677** | NCBI GEO: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE197677 | PMID 37091252; DOI `10.1016/j.isci.2023.106480` | Cross-sectional discovery cohort |
+| **GSE221561** | NCBI GEO: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE221561 | PMID 37563120; DOI `10.1038/s41392-023-01518-0` | Cross-sectional discovery cohort |
+| **OMIX005710** | NGDC OMIX: https://ngdc.cncb.ac.cn/omix/release/OMIX005710 | PMID 38566201; DOI `10.1186/s13073-024-01320-9` | Independent paired sensitivity analysis |
+
+Raw data are not redistributed. The final manuscript's analysis-specific eligibility, sensitivity outputs, and numerical audits are supplied in Supplementary Files S1 and S2.
+
+#### Historical/developmental resources
+
+Historical scripts and planning/audit records may reference **GSE160269, TCGA-ESCA, GSE53625, and DepMap**. These are retained as workflow provenance and do not contribute to the final Cancers manuscript's principal three-cohort inference unless explicitly stated in the manuscript.
+
+Exact retrieval dates/checksums for historical development resources are not required to support claims that are absent from the final manuscript. No stronger provenance should be inferred from their presence in historical script names or planning tables.
 
 ---
 
@@ -182,7 +182,7 @@ reconstructed (root/initial commit `45fab97` is the first repository commit).
   content-level selection provenance, **not** evidence that the interactions
   themselves lack biological support.
 
-### Attribution guardrails (do not publish)
+### Attribution guardrails
 
 - Do **not** attribute the 100-pair panel to CellChatDB, NicheNet, OmniPath,
   LIANA, CellPhoneDB, or any other external comprehensive LR database.
@@ -233,15 +233,10 @@ truth for the closure.
 
 ---
 
-## Open verification tasks (do before public release)
+## Remaining provenance limitations / maintenance notes
 
-1. Resolve exact version/URL/DOI/retrieval date/checksum for any external
-   resource the final manuscript relies on (CellChatDB, NicheNet, OmniPath,
-   LIANA) — or confirm the final manuscript makes **no** such claim.
-2. If an external record of the original curation source for the `curated_minimal` 100 LR pairs becomes available outside this repository, add it before release; otherwise state explicitly that the exact project-local pair set is reproducible from code but the original content-level selection provenance is not recoverable from repository history.
-3. Generate a full `renv.lock` snapshot pinning all analysis packages, or
-   record exact package versions from `08_logs/*_sessionInfo.txt` per release.
-4. Freeze dataset retrieval dates + checksums for the datasets actually used.
-5. After publication (DOI/release), back-fill the archive DOI, GitHub URL, and
-   release date into this file, `CITATION.cff`, `CODE_AVAILABILITY.md`, and
-   `DATA_AVAILABILITY.md`.
+1. The project-local `curated_minimal` 100-pair LR panel is reproducible from the committed scripts, but its pre-repository pair-selection rationale and pair-level literature provenance are not recoverable from the released history. Do not attribute it to CellChatDB, NicheNet, OmniPath, LIANA, CellPhoneDB, or another external comprehensive LR database.
+2. External LR resources that were unavailable at analysis time remain documented as unavailable; no version/retrieval metadata should be invented for resources that were not used.
+3. The released `renv.lock` contains 192 package-level records and supersedes the earlier note that a full package snapshot was still pending.
+4. The final Cancers manuscript's principal dataset accessions and primary publications are verified above. Historical optional/developmental resources remain provenance only unless explicitly promoted in a future analysis.
+5. Current public archive: GitHub `https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code`; Zenodo v1.0.0 `https://doi.org/10.5281/zenodo.22083690`.

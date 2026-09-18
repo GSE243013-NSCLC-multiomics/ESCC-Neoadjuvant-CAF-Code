@@ -1,48 +1,43 @@
 # Data Availability
 
-## Public data sources
+## Principal public datasets used in the final Cancers manuscript
 
-This study used and referenced the following public datasets. All raw source
-data remain available from their original repositories/providers and are
-subject to their original terms of use:
+The final manuscript reanalyzes three public single-cell RNA-sequencing datasets. Raw source data are not redistributed in this repository.
 
-| Dataset        | Original provider/repository | Availability of raw data            |
-|----------------|------------------------------|-------------------------------------|
-| GSE221561      | Public genomics repository (series accession as recorded in `00_metadata/`) | From original repository (unchanged terms) |
-| GSE197677      | Public genomics repository (series accession as recorded in `00_metadata/`) | From original repository (unchanged terms) |
-| GSE160269      | Public genomics repository (series accession as recorded in `00_metadata/`) | From original repository (unchanged terms) |
-| TCGA-ESCA      | TCGA program repository       | From original TCGA/GDC-controlled access (subject to TCGA data-use terms) |
-| GSE53625       | Public genomics repository (series accession referenced in Step 20 planning) | From original repository (unchanged terms) |
-| DepMap         | Project DepMap (Broad Institute) | From Project DepMap portal (subject to its terms) |
+| Dataset | Repository | Public access | Final manuscript role |
+|---|---|---|---|
+| **GSE197677** | NCBI Gene Expression Omnibus (GEO) | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE197677 | Cross-sectional discovery cohort |
+| **GSE221561** | NCBI Gene Expression Omnibus (GEO) | https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE221561 | Cross-sectional discovery cohort |
+| **OMIX005710** | National Genomics Data Center OMIX | https://ngdc.cncb.ac.cn/omix/release/OMIX005710 | Independent paired sensitivity analysis |
 
-Exact download URLs, retrieval dates, checksums, and any accession-level
-details are documented in `RESOURCE_PROVENANCE.md`; items not yet verified are
-explicitly marked `TO BE VERIFIED BEFORE PUBLIC RELEASE`.
+Primary source publications verified in the project provenance record are:
 
-## What this repository does and does not include
+- GSE197677 — PMID 37091252; DOI `10.1016/j.isci.2023.106480`
+- GSE221561 — PMID 37563120; DOI `10.1038/s41392-023-01518-0`
+- OMIX005710 — PMID 38566201; DOI `10.1186/s13073-024-01320-9`
 
-- **Not redistributed:** large raw datasets (e.g., FASTQ, raw UMI count
-  matrices, and other source-level files) are **not** redistributed here.
-  They remain available from their original repositories/providers.
-- **Included for transparency:** selected **derived tables and metadata**
-  necessary to reproduce the reported analyses and to audit provenance
-  (e.g., sample metadata, pseudobulk counts used at Steps 19A+,
-  eligible/final ligand-receptor pair lists, freeze/final evidence tables,
-  step-status and evidence-hierarchy tables).
-- **Excluded regenerable intermediates:** large intermediate analysis objects
-  (Seurat objects, big matrix objects, intermediate R binaries) are excluded.
-  Where applicable, they can be regenerated from the source data using the
-  provided scripts in dependency order.
+## Derived analytical outputs
 
-## Controlled accession
+This study generates new **derived analytical results** from the public source data, including sample/patient-level pseudobulk summaries, fixed CORE2/CORE4 score analyses, histology-sensitivity summaries, influence audits, figures, and numerical result tables.
 
-No controlled-access statement is made in this release. Access restrictions
-(if any) that apply to specific datasets derive from the datasets' own
-original providers and are not additional to, or different from, those terms.
-This statement will be updated to reference any finalized accession-specific
-data-use agreements before publication if needed.
+The final manuscript's analysis-specific eligibility, provenance, sensitivity outputs, and numerical audits are supplied with the journal submission as **Supplementary Files S1 and S2**.
 
----
+The public GitHub repository is primarily a code-and-documentation release and should not be interpreted as a complete mirror of every working-directory result or intermediate generated during project development.
 
-*Status: pre-publication draft. URLs, DOIs, retrieval dates, and accession
-details to be finalized before public release.*
+## Historical/developmental resources
+
+Historical scripts may refer to additional resources such as GSE160269, TCGA-ESCA, GSE53625, and DepMap. These records are retained for workflow provenance. They do **not** contribute to the final Cancers manuscript's principal three-cohort inference unless explicitly stated in the manuscript.
+
+## Redistribution and access
+
+- Large raw source datasets are **not redistributed** here.
+- Large Seurat objects, matrix objects, and other heavy intermediates are not redistributed.
+- No new patient recruitment, specimen collection, or intervention was performed for this study.
+- Access conditions for original public datasets remain those of their source repositories.
+
+## Code archive
+
+Analysis code and workflow documentation:
+
+- GitHub: https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code
+- Zenodo v1.0.0: https://doi.org/10.5281/zenodo.22083690

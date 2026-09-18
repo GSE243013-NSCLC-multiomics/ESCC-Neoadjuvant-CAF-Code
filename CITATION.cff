@@ -1,21 +1,30 @@
 cff-version: 1.2.0
-message: "If you use this software in research, please cite it using the metadata from this file."
-title: "ESCC Neoadjuvant Epithelial–Myeloid–CAF Analysis"
+message: "If you use this software in research, please cite this archived release."
+title: "ESCC Neoadjuvant CAF Score Transportability Analysis"
 type: software
-version: 0.1.0-prepublication
+version: 1.0.0
+date-released: 2026-08-24
 authors:
-  - name: "Xiaowei Xie"
+  - given-names: Xiaowei
+    family-names: Xie
     orcid: "https://orcid.org/0009-0009-4221-2777"
-  - name: "Ying Guo"
+    affiliation: "Department of Cardiothoracic Surgery, The First Hospital of Putian, Putian, Fujian, China"
+  - given-names: Ying
+    family-names: Guo
     orcid: "https://orcid.org/0009-0002-3907-0455"
-  - name: "Lanmei Yu"
+    affiliation: "Department of Cardiothoracic Surgery, The First Hospital of Putian, Putian, Fujian, China"
+  - given-names: Lanmei
+    family-names: Yu
+    affiliation: "Department of Cardiothoracic Surgery, The First Hospital of Putian, Putian, Fujian, China"
 keywords:
-  - "esophageal squamous cell carcinoma"
-  - "single-cell RNA sequencing"
-  - "cancer-associated fibroblasts"
-  - "neoadjuvant therapy"
-  - "cross-cohort analysis"
+  - esophageal squamous cell carcinoma
+  - cancer-associated fibroblasts
+  - single-cell RNA sequencing
+  - neoadjuvant therapy
+  - pseudobulk
+  - tumor microenvironment
+  - biomarker transportability
+repository-code: "https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code"
+doi: "10.5281/zenodo.22083690"
+url: "https://doi.org/10.5281/zenodo.22083690"
 license: MIT
-# repository-code: TODO — GitHub repository URL to be added after the repository is created
-# doi: TODO — archive DOI to be added after publication
-# date-released: TODO — to be set at first public release
