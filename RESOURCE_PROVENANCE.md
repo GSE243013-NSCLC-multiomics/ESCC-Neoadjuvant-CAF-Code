@@ -239,4 +239,4 @@ truth for the closure.
 2. External LR resources that were unavailable at analysis time remain documented as unavailable; no version/retrieval metadata should be invented for resources that were not used.
 3. The released `renv.lock` contains 192 package-level records and supersedes the earlier note that a full package snapshot was still pending.
 4. The final Cancers manuscript's principal dataset accessions and primary publications are verified above. Historical optional/developmental resources remain provenance only unless explicitly promoted in a future analysis.
-5. Current public archive: GitHub `https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code`; Zenodo v1.0.0 `https://doi.org/10.5281/zenodo.22083690`.
+5. Current public archive: GitHub `https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code`; Zenodo all-versions DOI `https://doi.org/10.5281/zenodo.22083689`. Each published software release has its own immutable version-specific DOI.

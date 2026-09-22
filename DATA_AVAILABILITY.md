@@ -40,4 +40,7 @@ Historical scripts may refer to additional resources such as GSE160269, TCGA-ESC
 Analysis code and workflow documentation:
 
 - GitHub: https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code
-- Zenodo v1.0.0: https://doi.org/10.5281/zenodo.22083690
+- Zenodo software archive (all versions): https://doi.org/10.5281/zenodo.22083689
+
+
+For the associated manuscript, the version-specific DOI of the final archived release should be cited to identify the exact software snapshot used.

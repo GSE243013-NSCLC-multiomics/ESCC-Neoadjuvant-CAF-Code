@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software in research, please cite this archived release."
+message: "If you use this software in research, please cite the version-specific Zenodo record for the release used."
 title: "ESCC Neoadjuvant CAF Score Transportability Analysis"
 type: software
-version: 1.0.0
-date-released: 2026-08-24
+version: 1.0.2
+date-released: 2026-09-18
 authors:
   - given-names: Xiaowei
     family-names: Xie
@@ -25,6 +25,4 @@ keywords:
   - tumor microenvironment
   - biomarker transportability
 repository-code: "https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code"
-doi: "10.5281/zenodo.22083690"
-url: "https://doi.org/10.5281/zenodo.22083690"
 license: MIT

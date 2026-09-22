@@ -143,8 +143,8 @@ In particular:
 GitHub repository:  
 https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code
 
-Zenodo archived release **v1.0.0**:  
-https://doi.org/10.5281/zenodo.22083690
+Zenodo archive (all versions):  
+https://doi.org/10.5281/zenodo.22083689
 
 The GitHub hosting-organization name is a legacy account label and is unrelated to the disease analyzed in this ESCC project.
 
@@ -166,7 +166,7 @@ The translational message is that stromal scores should be validated within a pr
 
 If using this software release, please cite:
 
-**Xie X, Guo Y, Yu L. ESCC Neoadjuvant CAF Score Transportability Analysis. Version 1.0.0. Zenodo. https://doi.org/10.5281/zenodo.22083690**
+**Xie X, Guo Y, Yu L. ESCC Neoadjuvant CAF Score Transportability Analysis. Zenodo software archive (all versions): https://doi.org/10.5281/zenodo.22083689. For reproducibility, cite the version-specific DOI of the release used.**
 
 Please also cite the associated Cancers article after publication.
 

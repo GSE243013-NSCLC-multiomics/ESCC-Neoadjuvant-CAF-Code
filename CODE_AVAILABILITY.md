@@ -3,11 +3,11 @@
 The analysis code supporting the reported computational workflow is publicly available at:
 
 - **GitHub:** https://github.com/GSE243013-NSCLC-multiomics/ESCC-Neoadjuvant-CAF-Code
-- **Zenodo archived release v1.0.0:** https://doi.org/10.5281/zenodo.22083690
+- **Zenodo software archive (all versions):** https://doi.org/10.5281/zenodo.22083689
 
 The public GitHub repository contains workflow scripts, code/provenance documentation, and the released R environment lockfile. Large raw datasets and heavy intermediate analysis objects are not redistributed.
 
-The immutable Zenodo v1.0.0 archive was published on **24 August 2026**. Documentation on the GitHub default branch may receive non-numerical clarification after that archive (for example, journal-title or evidence-boundary wording); such documentation edits do not alter the frozen numerical results reported in the manuscript.
+Zenodo assigns an immutable DOI to each archived release. The all-versions DOI above resolves to the current release family; for reproducibility, the manuscript should cite the version-specific DOI of the release used.
 
 Analysis-specific eligibility, provenance, sensitivity outputs, and numerical audits used in the final Cancers manuscript are supplied with the journal submission as Supplementary Files S1 and S2.
 
